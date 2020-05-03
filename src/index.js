@@ -5,5 +5,5 @@ const heading = new Heading();
 heading.render();
 const hwButton = new HelloWorldButton();
 hwButton.render();
-
+const ten = '11';
 // addImage();
