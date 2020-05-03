@@ -91,12 +91,10 @@
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_hello_world_button_hello_world_button__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1);
+ // import addImage from './add-image';
 
-// import addImage from './add-image';
-const hwButton = new _components_hello_world_button_hello_world_button__WEBPACK_IMPORTED_MODULE_0__["default"]();
-
-hwButton.render();
-// addImage();
+var hwButton = new _components_hello_world_button_hello_world_button__WEBPACK_IMPORTED_MODULE_0__["default"]();
+hwButton.render(); // addImage();
 
 /***/ }),
 /* 1 */
@@ -106,22 +104,42 @@ hwButton.render();
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _hello_world_button_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2);
 /* harmony import */ var _hello_world_button_css__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_hello_world_button_css__WEBPACK_IMPORTED_MODULE_0__);
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-class HelloWorldButton {
-    render() {
-        const button = document.createElement('button');
-        button.innerHTML = 'Hello World';
-        button.classList.add('hello-world-button');
-        button.onclick = function () {
-            const p = document.createElement('p');
-            p.innerHTML = 'Hello World';
-            p.classList.add('hello-world-text');
-            body.appendChild(p);
-        }
-        const body = document.querySelector('body');
-        body.appendChild(button);
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+
+
+var HelloWorldButton = /*#__PURE__*/function () {
+  function HelloWorldButton() {
+    _classCallCheck(this, HelloWorldButton);
+
+    this.btnCssClass = 'hello-world-button';
+  }
+
+  _createClass(HelloWorldButton, [{
+    key: "render",
+    value: function render() {
+      var button = document.createElement('button');
+      button.innerHTML = 'Hello World';
+      button.classList.add(this.btnCssClass);
+
+      button.onclick = function () {
+        var p = document.createElement('p');
+        p.innerHTML = 'Hello World';
+        p.classList.add('hello-world-text');
+        body.appendChild(p);
+      };
+
+      var body = document.querySelector('body');
+      body.appendChild(button);
     }
-}
+  }]);
+
+  return HelloWorldButton;
+}();
 
 /* harmony default export */ __webpack_exports__["default"] = (HelloWorldButton);
 
@@ -443,13 +461,13 @@ module.exports = exports;
 
 "use strict";
 
-
 /*
   MIT License http://www.opensource.org/licenses/mit-license.php
   Author Tobias Koppers @sokra
 */
 // css base code, injected by the css-loader
 // eslint-disable-next-line func-names
+
 module.exports = function (useSourceMap) {
   var list = []; // return the list of modules as css string
 
