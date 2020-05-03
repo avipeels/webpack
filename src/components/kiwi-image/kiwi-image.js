@@ -11,4 +11,4 @@ class KiwiImage {
         body.appendChild(img);
     }
 }
-export default addImage;
+export default KiwiImage;
